@@ -23,7 +23,7 @@ int main() {
     for(int i = 2; i <= n; i++)
         for(int j = 1; j <= i; j++)
             ans[i][j] = max(ans[i - 1][j], ans[i - 1][j - 1]) + bonus[i][j];
-    
+
     int res = -1;
     for(int i = 1; i <= n; i++)
         if(ans[n][i] > res) res = ans[n][i];

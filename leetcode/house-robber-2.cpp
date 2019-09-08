@@ -14,7 +14,7 @@ public:
         size_t n = nums.size();
         if(n == 0) return 0;
         if(n == 1) return nums[0];
-        
+
         int a = one(nums, 1, n);
         int b = one(nums, 0, n - 1);
         return max(a, b);

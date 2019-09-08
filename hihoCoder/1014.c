@@ -70,7 +70,7 @@ int main() {
         scanf("%s", word);
         res[i] = tsearch(word);
     }
-    for(int i = 0; i < n; i++) 
+    for(int i = 0; i < n; i++)
         printf("%d\n", res[i]);
     return 0;
 }

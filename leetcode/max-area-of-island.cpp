@@ -68,7 +68,7 @@ public:
             for(int j = 0; j < column; j++)
                 if(grid[i][j] == 1)
                     bfs(grid, i, j);
-        
+
         return maximum;
     }
 };

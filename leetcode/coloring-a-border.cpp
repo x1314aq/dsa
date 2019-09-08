@@ -20,7 +20,7 @@ public:
             return true;
         if(j == 0 || j == column - 1)
             return true;
-        if((grid[i - 1][j] != start_color && visited[i - 1][j] == 0) 
+        if((grid[i - 1][j] != start_color && visited[i - 1][j] == 0)
         || (grid[i + 1][j] != start_color && visited[i + 1][j] == 0)
         || (grid[i][j - 1] != start_color && visited[i][j - 1] == 0)
         || (grid[i][j + 1] != start_color && visited[i][j + 1] == 0))

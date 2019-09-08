@@ -27,7 +27,7 @@ int main() {
         a[i] = p / a[2 * temp - 1 - i];
     }
     if(a[temp - 1] == a[temp]) a.erase(a.begin() + temp);
-    
+
     vector<int> b;
     b.push_back(1);
     t = (int) sqrt(q);

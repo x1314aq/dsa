@@ -209,7 +209,7 @@ int main()
     int T, N, a, b;
 
     scanf("%d", &T);
-    
+
     while(T --)
     {
         scanf("%d", &N);
@@ -217,7 +217,7 @@ int main()
         memset(dp, -1, sizeof(dp));
         memset(line, 0, sizeof(line));
         memset(total, 0, sizeof(total));
-        
+
         for(int i = 1; i <= N; i++)
         {
             scanf("%d %d", &a, &b);

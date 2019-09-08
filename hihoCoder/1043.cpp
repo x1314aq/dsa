@@ -22,7 +22,7 @@ int main() {
     for(int i = 1; i <= n; i++)
         for(int j = need[i]; j <= m; j++)
             best[j] = max(best[j], best[j - need[i]] + value[i]);
-    
+
     cout << best[m] << endl;
     return 0;
 }
