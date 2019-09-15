@@ -2,9 +2,11 @@
  * hihoCoder 1014 Trie树
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+
+using namespace std;
 
 struct trie_node {
     char letter;
