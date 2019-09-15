@@ -3,13 +3,8 @@
  * 匈牙利算法
  */
 
-#include <cstring>
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <cstdio>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 vector<int> vs[1005];

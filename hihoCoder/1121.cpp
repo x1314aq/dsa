@@ -2,12 +2,8 @@
  * hihoCoder 1121 二分图一·二分图判定
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <cstring>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 enum {

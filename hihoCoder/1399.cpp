@@ -2,10 +2,8 @@
  * hihoCoder 1399  shortening Sequence
  */
 
-#include <iostream>
-#include <vector>
-#include <cstdio>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

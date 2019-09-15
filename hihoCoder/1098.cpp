@@ -3,11 +3,8 @@
  * Kruscal + 并查集
  */
 
-#include <iostream>
-#include <algorithm>
-#include <cstdio>
-#include <queue>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 struct edge {

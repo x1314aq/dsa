@@ -2,11 +2,8 @@
  * hihoCoder 1062  最近公共祖先一
  */
 
-#include <iostream>
-#include <string>
-#include <map>
-#include <set>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int main(){

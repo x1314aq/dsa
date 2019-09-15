@@ -2,12 +2,8 @@
  * hihoCoder 1066  无间道之并查集
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string>
-#include <unordered_map>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int superior[200005];

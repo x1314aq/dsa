@@ -2,12 +2,8 @@
  * hihoCoder 1518  最大集合
  */
 
-#include <iostream>
-#include <algorithm>
-#include <functional>
-#include <cstdio>
-#include <cstring>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int n;

@@ -2,11 +2,8 @@
  * hihoCoder 1186 Coordinates
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

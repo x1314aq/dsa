@@ -3,10 +3,8 @@
  * Floyd Algorithm
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int g[105][105];

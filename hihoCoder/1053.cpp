@@ -3,15 +3,8 @@
  * DFS
  */
 
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <functional>
-#include <cstdio>
-#include <cstring>
-#include <cmath>
-#include <cstdlib>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 struct village {

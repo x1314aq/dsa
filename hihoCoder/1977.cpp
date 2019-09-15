@@ -2,12 +2,8 @@
  * hihoCoder 1977  小Hi与魔法
  */
 
-#include <vector>
-#include <cstdio>
-#include <cstdlib>
-
+#include <bits/stdc++.h>
 using namespace std;
-
 int hs[1000001];
 
 int main() {

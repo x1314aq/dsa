@@ -3,9 +3,8 @@
  * Trie
  */
 
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
+#include <bits/stdc++.h>
+using namespace std;
 
 struct trie_node {
     char letter;

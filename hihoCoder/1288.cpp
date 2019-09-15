@@ -2,14 +2,8 @@
  * hihoCoder 1288  font size
  */
 
-#include <iostream>
-#include <algorithm>
-#include <functional>
-#include <vector>
-#include <cstdio>
-#include <cstring>
-#include <cmath>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int a[1005];

@@ -4,12 +4,8 @@
 
 // TLE and MLE
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <functional>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 #define INF 1000000005

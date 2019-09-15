@@ -2,10 +2,8 @@
  * hihoCoder 1128  二分 二分查找
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

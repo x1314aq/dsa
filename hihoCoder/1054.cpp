@@ -3,13 +3,8 @@
  * DFS
  */
 
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <functional>
-#include <cstdio>
-#include <cstring>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef pair<int, int> pii;
@@ -106,8 +101,7 @@ int main() {
  */
 
 #if 0
-#include <iostream>
-#include <cstring>
+#include <bits/stdc++.h>
 using namespace std;
 
 int ban[10][10];

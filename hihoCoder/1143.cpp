@@ -2,10 +2,8 @@
  * hihoCoder 1143 骨牌覆盖问题一
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 const int mod = 19999997;

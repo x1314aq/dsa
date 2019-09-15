@@ -3,9 +3,8 @@
  * 这题似乎数据有问题，网上找的答案也全是WA
  */
 
-#include <algorithm>
-#include <cstdio>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int weight[10005];

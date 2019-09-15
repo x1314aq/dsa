@@ -2,11 +2,8 @@
  * hihoCoder 1050  树中的最长路
  */
 
-#include <cstdio>
-#include <algorithm>
-#include <vector>
-#include <cstring>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 struct vertex {

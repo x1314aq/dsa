@@ -3,10 +3,8 @@
  * priority_queue with limited memory
  */
 
-#include <iostream>
-#include <algorithm>
-#include <queue>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

@@ -2,12 +2,8 @@
  * hihoCoder 1135 Magic Box
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <cstring>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 static bool vanish(int m, int n, int x, int y, int z, string &inp) {

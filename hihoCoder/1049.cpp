@@ -3,9 +3,8 @@
  * BST
  */
 
-#include <cstring>
-#include <iostream>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 char preorder[32];

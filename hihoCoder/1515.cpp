@@ -3,14 +3,8 @@
  * 带权并查集
  */
 
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <functional>
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef pair<int, int> pii;

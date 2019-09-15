@@ -3,12 +3,8 @@
  * Prim + priority_queue
  */
 
-#include <functional>
-#include <iostream>
-#include <algorithm>
-#include <queue>
-#include <cstdio>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef pair<int, int> pii;

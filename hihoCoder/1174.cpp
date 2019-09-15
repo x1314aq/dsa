@@ -2,12 +2,8 @@
  * hihoCoder 1174 拓扑排序一
  */
 
-#include <cstdio>
-#include <cstring>
-#include <algorithm>
-#include <vector>
-#include <string>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 struct vertex {

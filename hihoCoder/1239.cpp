@@ -3,10 +3,8 @@
  * DP
  */
 
-#include <iostream>
-#include <map>
-#include <cstdio>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;

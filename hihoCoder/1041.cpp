@@ -3,12 +3,8 @@
  * DFS + 剪枝
  */
 
-#include <cstring>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <bitset>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 vector<int> cities[105];

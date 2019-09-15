@@ -2,14 +2,8 @@
  * hihoCoder 1138 Islands Travel
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <functional>
-#include <cstring>
-#include <climits>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 #define INF 1000000005

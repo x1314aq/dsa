@@ -2,10 +2,8 @@
  * hihoCoder 1014 Trie树
  */
 
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 struct trie_node {

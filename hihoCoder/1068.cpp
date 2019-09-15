@@ -2,11 +2,8 @@
  * hihoCoder 1068  RMQ-ST算法
  */
 
-#include <algorithm>
-#include <cstdio>
-#include <cstring>
-#include <cmath>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int calc[1000005][25];

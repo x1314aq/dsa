@@ -4,11 +4,8 @@
  * See https://www.hackerrank.com/topics/manachers-algorithm
  */
 
-#include <vector>
-#include <iostream>
-#include <string>
-#include <algorithm>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 /*

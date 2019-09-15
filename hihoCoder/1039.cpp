@@ -2,9 +2,8 @@
  * hihoCoder 1039 字符消除
  */
 
-#include <iostream>
-#include <string>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int calcStr(string str){

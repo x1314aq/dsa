@@ -3,12 +3,8 @@
  * priority_queue
  */
 
-#include <functional>
-#include <iostream>
-#include <algorithm>
-#include <queue>
-#include <vector>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {

@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Check platform
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     cmake_policy(SET  CMP0042 NEW)
+    include_directories(/usr/local/include)
 endif()
 
 # define a macro for later use

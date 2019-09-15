@@ -3,12 +3,8 @@
  * Shortest Path Faster Algorithm
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <unordered_map>
 
+#include <bits/stdc++.h>
 using namespace std;
 typedef pair<int, int> pii;
 

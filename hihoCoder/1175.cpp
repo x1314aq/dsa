@@ -2,10 +2,8 @@
  * hihoCoder 1175 拓扑排序·二
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 const int mod = 142857;

@@ -2,11 +2,8 @@
  * hihoCoder 1094 Lost in the City
  */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cstdio>
 
+#include <bits/stdc++.h>
 using namespace std;
 
 char city[205][205];
