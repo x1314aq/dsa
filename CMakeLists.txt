@@ -33,3 +33,4 @@ endmacro()
 
 compile(hihoCoder)
 compile(leetcode)
+compile(51nod)
