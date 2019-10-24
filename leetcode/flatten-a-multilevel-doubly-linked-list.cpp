@@ -58,7 +58,6 @@ public:
     }
 };
 
-#if 0
 int main() {
     Node arrs[700];
     for(int i = 0; i < 700; i++) {
@@ -76,4 +75,3 @@ int main() {
     }
     return 0;
 }
-#endif

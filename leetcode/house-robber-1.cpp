@@ -30,3 +30,8 @@ public:
         return c;
     }
 };
+
+int main()
+{
+    return 0;
+}
