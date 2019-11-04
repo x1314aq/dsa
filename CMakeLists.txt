@@ -13,7 +13,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Check platform
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     cmake_policy(SET  CMP0042 NEW)
-    include_directories(/usr/local/include)
+endif()
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -include ${CMAKE_CURRENT_SOURCE_DIR}/include/bits/stdc++.h")
 endif()
 
 # define a macro for later use
