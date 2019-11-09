@@ -38,5 +38,5 @@ macro(compile DIR)
 endmacro()
 
 compile(hihoCoder)
-compile(leetcode)
+# compile(leetcode)
 compile(51nod)
