@@ -143,3 +143,31 @@ void pop_heap(int *array, int left, int right) {
 void push_heap(int *array, int left, int right) {
 
 }
+
+/**
+ * test if given number is a prime
+ */
+bool is_prime(int n) {
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0)
+            return false;
+    return true;
+}
+
+/**
+ * prime number generator up to *n*
+ */
+#define MAXN 100000005
+int vis2[MAXN];
+int prime[MAXN];
+bool pp[MAXN];
+void prime_generator(int n) {
+	int cnt = 0;
+	for(int i = 2; i <= n; i++) {
+        if(!vis2[i]) prime[cnt++] = i, pp[i] = true;
+        for(int j = 0;j < cnt && i * prime[j] <= n; j++) {
+            vis2[i * prime[j]] = i;
+            if(i % prime[j] == 0) break;
+        }
+    }
+}
