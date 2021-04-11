@@ -15,7 +15,8 @@ void dfs(int k, int startx, ll ss, ll sb, int n) {
         return;
     }
     for (int i = startx + 1; i <= startx + n; i++) {
-        if (i >= maxn) continue;
+        if (i >= maxn)
+            continue;
         dfs(k + 1, i, ss * s[i], sb + b[i], n);
     }
 }

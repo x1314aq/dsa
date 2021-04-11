@@ -24,9 +24,7 @@ int dis[100005];
 bool vis[100005];
 struct node {
     int v, w;
-    bool operator <(const node &a) const {
-        return w > a.w;
-    }
+    bool operator<(const node &a) const { return w > a.w; }
 };
 
 int main() {
@@ -49,7 +47,8 @@ int main() {
         node n = q.top();
         q.pop();
         int u = n.v;
-        if (vis[u]) continue;
+        if (vis[u])
+            continue;
         vis[u] = true;
         for (int i = head[u]; i; i = g[i].next) {
             int v = g[i].to;

@@ -32,8 +32,7 @@ int main() {
                 rdict[idx] = a;
                 idx++;
             }
-        }
-        else if (c == '+'){
+        } else if (c == '+') {
             int fb;
             cin >> b;
             if (dict.find(b) == dict.end()) {
@@ -44,8 +43,7 @@ int main() {
             fa = find(dict[a]);
             fb = find(dict[b]);
             sup[fb] = fa;
-        }
-        else {
+        } else {
             int fb;
             cin >> b;
             cout << b << ' ' << rdict[find(dict[b])] << endl;

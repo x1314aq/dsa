@@ -26,7 +26,7 @@ int main() {
             for (int x2 = n; x2 >= 1; x2--) {
                 int y2 = s + 1 - x2;
                 ll tmp = dp[x1 - 1][x2 - 1];
-                
+
                 tmp = max(tmp, dp[x1 - 1][x2]);
                 tmp = max(tmp, dp[x1][x2 - 1]);
                 tmp = max(tmp, dp[x1][x2]);

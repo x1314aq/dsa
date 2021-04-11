@@ -9,12 +9,14 @@ int prime[MAXN];
 bool pp[MAXN];
 
 void prime_generator(int n) {
-	int cnt = 0;
-	for(int i = 2; i <= n; i++) {
-        if(!vis[i]) prime[cnt++] = i, pp[i] = true;
-        for(int j = 0;j < cnt && i * prime[j] <= n; j++) {
+    int cnt = 0;
+    for (int i = 2; i <= n; i++) {
+        if (!vis[i])
+            prime[cnt++] = i, pp[i] = true;
+        for (int j = 0; j < cnt && i * prime[j] <= n; j++) {
             vis[i * prime[j]] = i;
-            if(i % prime[j] == 0) break;
+            if (i % prime[j] == 0)
+                break;
         }
     }
 }
@@ -33,7 +35,8 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cin >> n >> m;
-    if (m > 10000000) m = 10000000;
+    if (m > 10000000)
+        m = 10000000;
     prime_generator(m);
     for (int i = n; i <= m; ++i) {
         if (pp[i] && palindrome(i))

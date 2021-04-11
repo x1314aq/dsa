@@ -22,8 +22,7 @@ int main() {
     for (int i = 0; i < n; ++i) {
         if (i & 1) {
             v = i / 2 + 1;
-        }
-        else {
+        } else {
             v = n - i / 2;
         }
         ans += (a[u] - a[v]) * (a[u] - a[v]);

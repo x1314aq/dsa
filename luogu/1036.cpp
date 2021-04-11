@@ -7,9 +7,9 @@ int n, k;
 int a[5000005];
 int ans;
 
-bool isprime(ll a){
-    for(ll i = 2; i * i <= a; i++)
-        if(a % i == 0)
+bool isprime(ll a) {
+    for (ll i = 2; i * i <= a; i++)
+        if (a % i == 0)
             return false;
     return true;
 }

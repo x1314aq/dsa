@@ -2,7 +2,7 @@
 // 2206 低买高卖
 //
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 using ull = unsigned long long;
@@ -15,9 +15,9 @@ int main() {
 
     cin >> n;
     priority_queue<int, vector<int>, greater<int>> q;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         int tmp;
-		cin >> tmp;
+        cin >> tmp;
         q.push(tmp);
         q.push(tmp);
         ans += tmp - q.top();

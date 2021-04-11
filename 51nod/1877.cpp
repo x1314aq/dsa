@@ -29,8 +29,7 @@ int main() {
             goods[1] = max(goods[1], 0);
             goods[2] = 0;
         }
-    }
-    else if (goods[1] > 0) {
+    } else if (goods[1] > 0) {
         goods[1] -= 20 * goods[4];
         goods[1] = max(goods[1], 0);
     }
@@ -56,8 +55,7 @@ int main() {
             goods[2] -= c;
             goods[1] -= (36 - b * 9 - c * 4);
             goods[1] = max(goods[1], 0);
-        }
-        else {
+        } else {
             int d = 36 - b * 9 - goods[2] * 4;
             goods[1] -= d;
             goods[1] = max(goods[1], 0);

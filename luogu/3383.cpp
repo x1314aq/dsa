@@ -19,7 +19,8 @@ void prime(int n) {
             p[++cnt] = i;
         for (int j = 1; j <= cnt && i * p[j] <= n; j++) {
             a[i * p[j]] = 0;
-            if (i % p[j] == 0) break;
+            if (i % p[j] == 0)
+                break;
         }
     }
 }

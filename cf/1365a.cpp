@@ -22,16 +22,20 @@ int main() {
             int s = 0;
             for (int j = 0; j < m; j++)
                 s += g[i][j];
-            if (s == 0) a++;
+            if (s == 0)
+                a++;
         }
 
         for (int j = 0; j < m; j++) {
             int s = 0;
             for (int i = 0; i < n; i++)
                 s += g[i][j];
-            if (s == 0) b++;
+            if (s == 0)
+                b++;
         }
-        if (min(a, b) & 1) cout << "Ashish" << endl;
-        else cout << "Vivek" << endl;
+        if (min(a, b) & 1)
+            cout << "Ashish" << endl;
+        else
+            cout << "Vivek" << endl;
     }
 }

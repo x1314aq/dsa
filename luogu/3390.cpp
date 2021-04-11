@@ -51,7 +51,7 @@ int main() {
 
     for (int i = 0; i < n; i++)
         ans[i][i] = 1;
-    
+
     while (k) {
         if (k & 1)
             matrix_multiply();

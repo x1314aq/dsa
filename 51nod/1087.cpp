@@ -12,7 +12,7 @@ int main() {
         dict[1 + i * (i - 1) / 2] = true;
 
     int n;
-    
+
     cin >> n;
     while (n--) {
         int num;

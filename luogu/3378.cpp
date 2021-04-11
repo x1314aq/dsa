@@ -6,9 +6,9 @@
 
 using namespace std;
 
-#define lc(x)       (2 * (x) + 1)
-#define rc(x)       (2 * ((x) + 1))
-#define pp(x)       ((x) > 0 ? ((x) - 1) / 2 : 0)
+#define lc(x) (2 * (x) + 1)
+#define rc(x) (2 * ((x) + 1))
+#define pp(x) ((x) > 0 ? ((x)-1) / 2 : 0)
 
 int arr[1000005];
 int sz = 0;
@@ -41,19 +41,16 @@ void pop() {
             arr[u] = arr[l];
             arr[l] = tmp;
             u = l;
-        }
-        else if (r < sz && l >= sz) {
+        } else if (r < sz && l >= sz) {
             arr[u] = arr[r];
             arr[r] = tmp;
             u = r;
-        }
-        else {
+        } else {
             if (arr[l] < arr[r]) {
                 arr[u] = arr[l];
                 arr[l] = tmp;
                 u = l;
-            }
-            else {
+            } else {
                 arr[u] = arr[r];
                 arr[r] = tmp;
                 u = r;

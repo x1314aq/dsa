@@ -13,7 +13,8 @@ int main() {
     cin >> n >> m;
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    while (m--) next_permutation(a, a + n);
+    while (m--)
+        next_permutation(a, a + n);
     for (int i = 0; i < n; i++)
         printf("%d ", a[i]);
     putchar('\n');

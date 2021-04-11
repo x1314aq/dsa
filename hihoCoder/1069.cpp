@@ -3,7 +3,6 @@
  * 在线算法+RMQ-ST
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -23,7 +22,7 @@ static void dfs(int u) {
     arr[cnt++][0] = degree[u];
 
     int sz = g[u].size();
-    for(int i = 0; i < sz; i++) {
+    for (int i = 0; i < sz; i++) {
         dfs(g[u][i]);
         arr[cnt++][0] = degree[u];
     }
@@ -31,8 +30,8 @@ static void dfs(int u) {
 
 static void pre_calc() {
     int t = int(log2(cnt));
-    for(int j = 1; j <= t; j++)
-        for(int i = 1; i + (1 << (j - 1)) - 1 <= cnt; i++)
+    for (int j = 1; j <= t; j++)
+        for (int i = 1; i + (1 << (j - 1)) - 1 <= cnt; i++)
             arr[i][j] = min(arr[i][j - 1], arr[i + (1 << (j - 1))][j - 1]);
 }
 
@@ -43,14 +42,14 @@ static int query(int l, int r) {
 
 int main() {
     cin >> n;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         string f, s;
         cin >> f >> s;
-        if(!dict[f]) {
+        if (!dict[f]) {
             name[cnt] = f;
             dict[f] = cnt++;
         }
-        if(!dict[s]) {
+        if (!dict[s]) {
             name[cnt] = s;
             dict[s] = cnt++;
         }
@@ -65,14 +64,14 @@ int main() {
 
     cin >> m;
     vector<int> ans;
-    for(int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++) {
         string p1, p2;
         cin >> p1 >> p2;
         int d1 = dict[p1];
         int d2 = dict[p2];
         ans.push_back(query(min(degree[d1], degree[d2]), max(degree[d1], degree[d2])));
     }
-    for(int i = 0; i < m; i++)
+    for (int i = 0; i < m; i++)
         cout << name[reverse_degree[ans[i]]] << endl;
 
     return 0;

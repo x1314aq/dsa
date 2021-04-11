@@ -2,7 +2,6 @@
  * hihoCoder 1143 骨牌覆盖问题一
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,14 +9,14 @@ const int mod = 19999997;
 
 /* 递推公式，时间复杂度O(n) */
 long fib(int n) {
-    if(n == 1)
+    if (n == 1)
         return 1;
-    if(n == 2)
+    if (n == 2)
         return 2;
 
     long a = 1, b = 2;
     long res;
-    for(int i = 3; i <= n; i++) {
+    for (int i = 3; i <= n; i++) {
         res = (a + b) % mod;
         a = b;
         b = res;
@@ -38,11 +37,11 @@ vector<long> mul(vector<long> &a, vector<long> &b) {
 int main() {
     unsigned int n;
     cin >> n;
-    if(n == 1) {
+    if (n == 1) {
         cout << 1 << endl;
         return 0;
     }
-    if(n == 2) {
+    if (n == 2) {
         cout << 2 << endl;
         return 0;
     }
@@ -50,8 +49,8 @@ int main() {
     vector<long> a = {0, 1, 1, 1};
     vector<long> res = {1, 0, 0, 1};
 
-    for(; n; n >>= 1) {
-        if(n & 1)
+    for (; n; n >>= 1) {
+        if (n & 1)
             res = mul(res, a);
         a = mul(a, a);
     }

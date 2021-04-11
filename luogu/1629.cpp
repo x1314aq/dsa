@@ -27,9 +27,7 @@ void add(int u, int v, int w) {
 
 struct node {
     int u, d;
-    bool operator <(const node &a) const {
-        return d > a.d;
-    }
+    bool operator<(const node &a) const { return d > a.d; }
 };
 
 int n, m;
@@ -49,7 +47,8 @@ void dijkstra() {
     while (!q.empty()) {
         u = q.top().u;
         q.pop();
-        if (vis[u]) continue;
+        if (vis[u])
+            continue;
         vis[u] = true;
         for (int i = head[u]; i; i = g[i].next) {
             int v = g[i].to;
@@ -74,7 +73,8 @@ void reverse_dijkstra() {
     while (!q.empty()) {
         u = q.top().u;
         q.pop();
-        if (vis[u]) continue;
+        if (vis[u])
+            continue;
         vis[u] = true;
         for (int i = rhead[u]; i; i = rg[i].next) {
             int v = rg[i].to;

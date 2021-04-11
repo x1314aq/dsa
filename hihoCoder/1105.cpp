@@ -3,7 +3,6 @@
  * priority_queue
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -12,21 +11,20 @@ int main() {
     vector<int> ans;
     priority_queue<int> pq;
     cin >> n;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         int num;
         char c;
         cin >> c;
-        if(c == 'A') {
+        if (c == 'A') {
             cin >> num;
             pq.push(num);
-        }
-        else {
+        } else {
             ans.push_back(pq.top());
             pq.pop();
         }
     }
 
-    for(size_t i = 0; i < ans.size(); i++)
+    for (size_t i = 0; i < ans.size(); i++)
         cout << ans[i] << endl;
     return 0;
 }

@@ -20,7 +20,7 @@ void join(int x, int y) {
         sup[fx] = fy;
 }
 
-#define SQ(x)       ((double)(x) * (double)(x))
+#define SQ(x) ((double)(x) * (double)(x))
 int main() {
     int T, n, h, r;
     ios::sync_with_stdio(false);

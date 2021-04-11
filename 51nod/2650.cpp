@@ -18,9 +18,7 @@ int visited[1010];
 int dist[1010];
 
 struct cmp {
-    bool operator()(const pii &a, const pii &b) {
-        return a.second > b.second;
-    }
+    bool operator()(const pii &a, const pii &b) { return a.second > b.second; }
 };
 
 void dijkstra() {

@@ -11,7 +11,8 @@ int d[1000005];
 int ans;
 
 void fn(int l, int r, int s) {
-    if (l == r) return;
+    if (l == r)
+        return;
     if (l + 1 == r) {
         ans += d[l] - s;
         return;

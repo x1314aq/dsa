@@ -14,7 +14,7 @@ ull quick_pow(ull a, ull b) {
 
     while (b) {
         if (b & 1)
-            ans = (ans * a)  % mod;
+            ans = (ans * a) % mod;
         b >>= 1;
         a = (a * a) % mod;
     }

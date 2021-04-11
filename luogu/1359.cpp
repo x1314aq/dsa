@@ -17,7 +17,6 @@ int main() {
         for (int j = i + 1; j <= n; j++)
             cin >> m[i][j];
 
-
     for (int i = 2; i <= n; i++) {
         int tmp = 10000000;
         for (int j = 1; j < i; j++) {

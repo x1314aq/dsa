@@ -45,8 +45,7 @@ ull dfs0(int pos, ull cnt, int lead, int limit) {
                 ans += dfs0(pos - 1, cnt, 1, 0);
             else
                 ans += dfs0(pos - 1, cnt + 1, 0, limit && i == up);
-        }
-        else {
+        } else {
             ans += dfs0(pos - 1, cnt, 0, limit && i == up);
         }
     }

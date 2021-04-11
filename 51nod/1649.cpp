@@ -40,8 +40,7 @@ int bfs(bool rail) {
                     visited[a[u][i]] = true;
                 }
             }
-        }
-        else {
+        } else {
             for (int i = 0; i < b[u].size(); i++) {
                 if (b[u][i] == n)
                     return ans + 1;
@@ -62,7 +61,8 @@ int main() {
     cin >> n >> m;
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= n; j++)
-            if (i != j) c[i][j] = 1;
+            if (i != j)
+                c[i][j] = 1;
     for (int i = 0; i < m; i++) {
         int u, v;
         cin >> u >> v;

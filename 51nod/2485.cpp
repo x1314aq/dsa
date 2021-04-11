@@ -25,8 +25,7 @@ int main() {
             cout << "Impossible" << endl;
         else
             cout << "Possible" << endl;
-    }
-    else {
+    } else {
         if (most > len / 2)
             cout << "Impossible" << endl;
         else

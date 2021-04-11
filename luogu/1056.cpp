@@ -10,9 +10,7 @@ int row[1005], col[1005];
 
 struct node {
     int index, num;
-    bool operator <(const node &b) const {
-        return num < b.num;
-    }
+    bool operator<(const node &b) const { return num < b.num; }
 };
 
 int main() {
@@ -22,8 +20,10 @@ int main() {
     for (int i = 0; i < d; i++) {
         int x1, y1, x2, y2;
         cin >> x1 >> y1 >> x2 >> y2;
-        if (x1 == x2) col[min(y1, y2)]++;
-        else row[min(x1, x2)]++;
+        if (x1 == x2)
+            col[min(y1, y2)]++;
+        else
+            row[min(x1, x2)]++;
     }
 
     priority_queue<node> q1, q2;

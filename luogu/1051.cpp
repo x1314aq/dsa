@@ -20,11 +20,16 @@ int main() {
         char c, d;
         ull tmp = 0;
         cin >> s >> a >> b >> c >> d >> e;
-        if (a > 80 && e >= 1) tmp += 8000;
-        if (a > 85 && b > 80) tmp += 4000;
-        if (a > 90) tmp += 2000;
-        if (a > 85 && d == 'Y') tmp += 1000;
-        if (b > 80 && c == 'Y') tmp += 850;
+        if (a > 80 && e >= 1)
+            tmp += 8000;
+        if (a > 85 && b > 80)
+            tmp += 4000;
+        if (a > 90)
+            tmp += 2000;
+        if (a > 85 && d == 'Y')
+            tmp += 1000;
+        if (b > 80 && c == 'Y')
+            tmp += 850;
         total += tmp;
         if (tmp > ans) {
             name = s;

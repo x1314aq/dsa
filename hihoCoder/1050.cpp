@@ -2,15 +2,12 @@
  * hihoCoder 1050  树中的最长路
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
 struct vertex {
     vector<int> neighs;
-    void append(int a) {
-        neighs.push_back(a);
-    }
+    void append(int a) { neighs.push_back(a); }
 };
 
 vertex vs[100005];
@@ -23,7 +20,7 @@ static void dfs(int v) {
     visit[v] = 1;
 
     vector<int> tmp;
-    for(int i = 0; i < sz; i++) {
+    for (int i = 0; i < sz; i++) {
         int u = vs[v].neighs[i];
         if (visit[u])
             continue;
@@ -35,11 +32,9 @@ static void dfs(int v) {
 
     if (tmp.size() == 0) {
         first[v] = 0;
-    }
-    else if (tmp.size() == 1) {
+    } else if (tmp.size() == 1) {
         first[v] = tmp[0] + 1;
-    }
-    else {
+    } else {
         sort(tmp.begin(), tmp.end(), greater<int>());
         first[v] = tmp[0] + 1;
         second[v] = tmp[1] + 1;

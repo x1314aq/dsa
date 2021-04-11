@@ -30,19 +30,19 @@ int main() {
     int n, m;
     scanf("%d %d", &n, &m);
 
-    for(int i = 1; i <= m; i++)
+    for (int i = 1; i <= m; i++)
         scanf("%d %d %d", &es[i].from, &es[i].to, &es[i].weight);
     sort(es + 1, es + m + 1, cmp);
-    for(int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++)
         sup[i] = i;
 
     int ans = 0;
-    for(int i = 1; i <= m; i++) {
+    for (int i = 1; i <= m; i++) {
         int from = es[i].from;
         int to = es[i].to;
         int fx = find(from);
         int fy = find(to);
-        if(fx != fy) {
+        if (fx != fy) {
             join(fx, fy);
             ans += es[i].weight;
         }

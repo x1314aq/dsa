@@ -20,22 +20,21 @@ int main() {
     scanf("%s", &s[1]);
     int len = 2 * strlen(&s[1]) + 1;
     int c = 1, r = 0, rad, tmp = 0;
-    for(int i = 1; i <= len; i++) {
-        if(i <= r)
+    for (int i = 1; i <= len; i++) {
+        if (i <= r)
             rad = min(p[2 * c - i], r - i);
         else
             rad = 0;
-        while(i + rad <= len && i - rad >= 1 && f(i + rad, i - rad))
+        while (i + rad <= len && i - rad >= 1 && f(i + rad, i - rad))
             rad++;
         p[i] = rad;
-        if(i + rad - 1 > r) {
+        if (i + rad - 1 > r) {
             c = i;
             r = i + rad - 1;
         }
-        if(rad > tmp)
+        if (rad > tmp)
             tmp = rad;
     }
     printf("%d\n", tmp - 1);
     return 0;
 }
-

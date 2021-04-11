@@ -25,7 +25,6 @@ int main() {
             ans = "Not jolly";
             break;
         }
-            
     }
     cout << ans << endl;
     return 0;

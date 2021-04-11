@@ -19,7 +19,6 @@ int main() {
         for (int j = C[i]; j <= v; j++)
             dp[j] = max(dp[j], dp[j - C[i]] + W[i]);
 
-
     cout << dp[v] << endl;
     return 0;
 }

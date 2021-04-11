@@ -8,15 +8,15 @@ using namespace std;
 
 int a[100005];
 
-void insert_sort(int l, int r)
-{
+void insert_sort(int l, int r) {
     for (int i = l + 1; i < r; i++)
-        for (int j = i; j > l && a[j] < a[j-1]; j--)
-            swap(a[j], a[j-1]);
+        for (int j = i; j > l && a[j] < a[j - 1]; j--)
+            swap(a[j], a[j - 1]);
 }
 
-void quick_sort(int l, int r){
-    if (r - l < 2) return;
+void quick_sort(int l, int r) {
+    if (r - l < 2)
+        return;
     if (r - l < 9) {
         insert_sort(l, r);
         return;
@@ -24,8 +24,8 @@ void quick_sort(int l, int r){
     int p = (rand() % (r - l)) + l;
     swap(a[l], a[p]);
     int mid = l;
-    for (int i = l + 1; i < r; i++){
-        if (a[i] < a[l]){
+    for (int i = l + 1; i < r; i++) {
+        if (a[i] < a[l]) {
             mid++;
             swap(a[i], a[mid]);
         }

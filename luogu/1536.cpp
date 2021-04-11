@@ -13,7 +13,7 @@ int find(int x) {
 }
 
 int main() {
-    int n,m;
+    int n, m;
     ios::sync_with_stdio(false);
     cin >> n;
     while (n != 0) {

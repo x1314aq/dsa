@@ -3,7 +3,6 @@
  * BST
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -12,17 +11,20 @@ char inorder[32];
 char lc[32], rc[32];
 
 char build(int l1, int r1, int l2, int r2) {
-    if(l1 > r1) return '0';
+    if (l1 > r1)
+        return '0';
     char root = preorder[l1];
     int p = l2;
-    while(inorder[p] != root) p++;
+    while (inorder[p] != root)
+        p++;
     lc[root - 'A'] = build(l1 + 1, p - l2 + l1, l2, p - 1);
-    rc[root - 'A'] = build(p - l2 + l1 + 1, r1, p + 1,  r2);
+    rc[root - 'A'] = build(p - l2 + l1 + 1, r1, p + 1, r2);
     return root;
 }
 
 void post(char root) {
-    if(root == '0') return;
+    if (root == '0')
+        return;
     post(lc[root - 'A']);
     post(rc[root - 'A']);
     cout << root;

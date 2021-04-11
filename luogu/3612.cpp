@@ -14,9 +14,11 @@ int main() {
 
     while (m > sz) {
         n = 0;
-        while (m > sz * (1ll << n)) n++;
+        while (m > sz * (1ll << n))
+            n++;
         m = m - sz * (1ll << (n - 1)) - 1;
-        if (m == 0) m = sz * (1ll << (n - 1));
+        if (m == 0)
+            m = sz * (1ll << (n - 1));
     }
     cout << s[m - 1] << endl;
     return 0;

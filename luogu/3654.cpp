@@ -16,7 +16,8 @@ static int ok(int i, int j) {
             break;
         }
     }
-    if (a) ans++;
+    if (a)
+        ans++;
 
     a = true;
     for (int u = 1; u < k; ++u) {
@@ -25,7 +26,8 @@ static int ok(int i, int j) {
             break;
         }
     }
-    if (a) ans++;
+    if (a)
+        ans++;
     return ans;
 }
 
@@ -44,8 +46,10 @@ int main() {
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             if (g[i][j] == '.') {
-                if (k == 1) ans++;
-                else ans += ok(i, j);
+                if (k == 1)
+                    ans++;
+                else
+                    ans += ok(i, j);
             }
         }
     }

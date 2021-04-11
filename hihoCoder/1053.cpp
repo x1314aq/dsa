@@ -3,7 +3,6 @@
  * DFS
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,37 +25,35 @@ static bool check(int x) {
     memset(num, 0, sizeof(num));
     num[1][0] = vs[1].y;
     int i = 1, target = 1;
-    while(i <= n && target <= n) {
-        if(abs(vs[i].x - vs[target].x) > r) {
-            if(target > i)
+    while (i <= n && target <= n) {
+        if (abs(vs[i].x - vs[target].x) > r) {
+            if (target > i)
                 return false;
             else
                 target++;
-        }
-        else {
-            if(num[target][1] + num[i][0] <= x) {
+        } else {
+            if (num[target][1] + num[i][0] <= x) {
                 num[target][1] += num[i][0];
                 num[i][0] = 0;
                 i++;
                 num[i][0] = vs[i].y;
-            }
-            else {
+            } else {
                 num[i][0] -= (x - num[target][1]);
                 num[target][1] = x;
                 target++;
             }
         }
     }
-    for(int j = 1; j <= n; j++)
-        if(num[j][0])
+    for (int j = 1; j <= n; j++)
+        if (num[j][0])
             return false;
     return true;
 }
 
 static int solve(int inf, int sup) {
-    while(inf + 1 < sup) {
+    while (inf + 1 < sup) {
         int mid = (inf + sup) / 2;
-        if(check(mid))
+        if (check(mid))
             sup = mid;
         else
             inf = mid;
@@ -69,11 +66,11 @@ int main() {
     vector<int> ans;
 
     scanf("%d", &t);
-    while(t--) {
+    while (t--) {
         int lim = 0;
         memset(vs, 0, sizeof(vs));
         scanf("%d %d", &n, &r);
-        for(int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             scanf("%d %d", &vs[i].x, &vs[i].y);
             lim = max(lim, vs[i].y);
         }
@@ -81,7 +78,7 @@ int main() {
         ans.push_back(solve(0, lim));
     }
 
-    for(int i = 0; i < ans.size(); i++)
+    for (int i = 0; i < ans.size(); i++)
         cout << ans[i] << endl;
     return 0;
 }

@@ -7,7 +7,7 @@
 using namespace std;
 using ull = unsigned long long;
 
-const ull mod = 1000000009; 
+const ull mod = 1000000009;
 
 ull a[2][2] = {
     {1, 1},
@@ -48,8 +48,8 @@ int main() {
         {0, 1},
     };
 
-    while(n) {
-        if(n & 1)
+    while (n) {
+        if (n & 1)
             matrix_multiply(ans);
         n >>= 1;
         matrix_square();

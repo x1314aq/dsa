@@ -27,7 +27,8 @@ int main() {
     ull sum = 0;
     for (int i = 0; i < n; i++) {
         arr[i].M = p / arr[i].m;
-        while (arr[i].M * arr[i].t % arr[i].m != 1) arr[i].t++;
+        while (arr[i].M * arr[i].t % arr[i].m != 1)
+            arr[i].t++;
         sum += arr[i].a * arr[i].t * arr[i].M;
     }
 

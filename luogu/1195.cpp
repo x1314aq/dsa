@@ -34,7 +34,8 @@ int main() {
     sort(g, g + m, cmp);
     ull ans = 0;
     for (int i = 0; i < m; i++) {
-        if (n == k) break;
+        if (n == k)
+            break;
         int fu = find(g[i].from);
         int fv = find(g[i].to);
         if (fu != fv) {
@@ -43,7 +44,9 @@ int main() {
             ans += g[i].weight;
         }
     }
-    if (n != k) cout << "No Answer" << endl;
-    else cout << ans << endl;
+    if (n != k)
+        cout << "No Answer" << endl;
+    else
+        cout << ans << endl;
     return 0;
 }

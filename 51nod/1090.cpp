@@ -8,7 +8,7 @@ using namespace std;
 
 struct node {
     int first, second, third;
-    
+
     node(int a, int b) {
         int dummy[3] = {a, b, 0 - a - b};
 
@@ -18,9 +18,8 @@ struct node {
         third = dummy[2];
     }
 
-    bool operator< (const node &a) const {
-        return first != a.first ? first < a.first
-            : (second != a.second ? second < a.second : third < a.third);
+    bool operator<(const node &a) const {
+        return first != a.first ? first < a.first : (second != a.second ? second < a.second : third < a.third);
     }
 };
 
@@ -30,7 +29,7 @@ set<node> ans;
 int main() {
     int n;
     unordered_map<int, bool> dict;
-    
+
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> arr[i];
@@ -38,10 +37,12 @@ int main() {
     for (int i = 0; i < n; i++) {
         int tmp = -arr[i];
         for (int j = 0; j < n; j++) {
-            if (i == j) continue;
+            if (i == j)
+                continue;
             if (dict.find(tmp - arr[j]) != dict.end())
                 ans.insert(node(arr[i], arr[j]));
-            else dict[arr[j]] = true;
+            else
+                dict[arr[j]] = true;
         }
         dict.clear();
     }

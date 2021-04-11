@@ -27,7 +27,8 @@ int main() {
 
     int ans = 0;
     for (int i = 0; i <= up; i++)
-        if (w[i]) ans++;
+        if (w[i])
+            ans++;
 
     cout << ans << endl;
     return 0;

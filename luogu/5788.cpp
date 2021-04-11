@@ -19,7 +19,8 @@ int main() {
 
     int top = 0;
     for (int i = n; i >= 1; i--) {
-        while (top && a[s[top]] <= a[i]) top--;
+        while (top && a[s[top]] <= a[i])
+            top--;
         ans[i] = s[top];
         s[++top] = i;
     }

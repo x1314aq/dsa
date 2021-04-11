@@ -12,7 +12,7 @@ const double le = 0.43429448190325;
 int main() {
     int t;
     cin >> t;
-    while(t--) {
+    while (t--) {
         int n;
         cin >> n;
         double res = log10(2.0 * pi * n) / 2.0 + n * (log10(n) - le);

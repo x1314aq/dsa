@@ -3,7 +3,6 @@
  * priority_queue with limited memory
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,14 +10,14 @@ int main() {
     int n, k, temp;
     cin >> n >> k;
     priority_queue<int> pq;
-    for(int i = 1; i <= k; i++) {
+    for (int i = 1; i <= k; i++) {
         cin >> temp;
         pq.push(temp);
     }
-    for(int i = k + 1; i <= n; i++) {
+    for (int i = k + 1; i <= n; i++) {
         cin >> temp;
         int cur = pq.top();
-        if(temp < cur) {
+        if (temp < cur) {
             pq.pop();
             pq.push(temp);
         }

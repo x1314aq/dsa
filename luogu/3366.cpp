@@ -37,14 +37,17 @@ int main() {
     for (int i = 0; i < m; i++) {
         int fu = find(g[i].from);
         int fv = find(g[i].to);
-        if (fu == fv) continue;
+        if (fu == fv)
+            continue;
         ans += g[i].weight;
         sup[fu] = fv;
         cnt++;
-        if (cnt == n - 1) break;
+        if (cnt == n - 1)
+            break;
     }
     if (cnt == n - 1)
         cout << ans << endl;
-    else cout << "orz" << endl;
+    else
+        cout << "orz" << endl;
     return 0;
 }

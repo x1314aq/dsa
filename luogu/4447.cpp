@@ -27,8 +27,7 @@ int main() {
                 v[j].second++;
                 flag = false;
                 break;
-            }
-            else {
+            } else {
                 flag = true;
             }
         }

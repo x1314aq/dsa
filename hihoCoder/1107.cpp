@@ -25,16 +25,16 @@ static void tinsert(char *word) {
     char *c = word;
     struct trie_node *p;
     struct trie_node *n = root.nodes[*c - 'a'];
-    if(!n) {
+    if (!n) {
         n = alloc_one();
         n->letter = *c;
         root.nodes[*c - 'a'] = n;
     }
     n->count++;
-    while(*++c) {
+    while (*++c) {
         p = n;
         n = n->childs[*c - 'a'];
-        if(!n) {
+        if (!n) {
             n = alloc_one();
             n->letter = *c;
             p->childs[*c - 'a'] = n;
@@ -44,21 +44,23 @@ static void tinsert(char *word) {
 }
 
 static void travel(struct trie_node *n, int &ans) {
-    if(n->count <= 5) {
+    if (n->count <= 5) {
         ans++;
         return;
     }
-    for(int i = 0; i < 26; i++) {
+    for (int i = 0; i < 26; i++) {
         struct trie_node *child = n->childs[i];
-        if(child) travel(child, ans);
+        if (child)
+            travel(child, ans);
     }
 }
 
 static int traversal() {
     int ans = 0;
-    for(int i = 0; i < 26; i++) {
+    for (int i = 0; i < 26; i++) {
         struct trie_node *n = root.nodes[i];
-        if(n) travel(n, ans);
+        if (n)
+            travel(n, ans);
     }
     return ans;
 }
@@ -68,7 +70,7 @@ char word[2000000];
 int main() {
     int n;
     scanf("%d", &n);
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%s", word);
         tinsert(word);
     }

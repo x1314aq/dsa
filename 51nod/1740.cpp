@@ -28,7 +28,7 @@ ull find(ull n) {
 int main() {
     ull n, k, q;
     ll x, y;
-    
+
     cin >> n;
     k = find(n);
     q = n - 3 * k * (k + 1);
@@ -36,7 +36,7 @@ int main() {
     y = 0;
 
     if (k == 0) {
-        switch(q) {
+        switch (q) {
         case 1:
             x = 1;
             y = 2;
@@ -62,12 +62,10 @@ int main() {
     if (q == 1) {
         x += 1;
         y += 2;
-    }
-    else if (q > 1 && q <= 1 + k) {
+    } else if (q > 1 && q <= 1 + k) {
         x -= (q - 2);
         y += 2 * q;
-    }
-    else if (q > 1 + k) {
+    } else if (q > 1 + k) {
         x -= (k - 1);
         y += 2 * (k + 1);
         q -= (1 + k);
@@ -76,16 +74,14 @@ int main() {
 
         if (a == 0) {
             x -= 2 * b;
-        }
-        else {
+        } else {
             x -= 2 * (k + 1);
             if (a == 1) {
                 x -= b;
                 y -= 2 * b;
                 if (b == 0)
                     goto out;
-            }
-            else {
+            } else {
                 x -= (k + 1);
                 y -= 2 * (k + 1);
                 if (a == 2) {
@@ -93,16 +89,14 @@ int main() {
                     y -= 2 * b;
                     if (b == 0)
                         goto out;
-                }
-                else {
+                } else {
                     x += (k + 1);
                     y -= 2 * (k + 1);
                     if (a == 3) {
                         x += 2 * b;
                         if (b == 0)
                             goto out;
-                    }
-                    else {
+                    } else {
                         x += 2 * (k + 1);
                         if (a == 4) {
                             x += b;

@@ -26,9 +26,7 @@ void add(int u, int v, int w) {
 
 struct node {
     int v, w;
-    bool operator <(const node &a) const {
-        return w > a.w;
-    }
+    bool operator<(const node &a) const { return w > a.w; }
 };
 
 bool dijkstra(int n) {
@@ -47,10 +45,12 @@ bool dijkstra(int n) {
         node tmp = q.top();
         q.pop();
         u = tmp.v;
-        if (vis[u]) continue;
+        if (vis[u])
+            continue;
         vis[u] = true;
         for (int i = head[u]; i; i = g[i].next) {
-            if (!g[i].valid) continue;
+            if (!g[i].valid)
+                continue;
             int v = g[i].to;
             if (!vis[v] && dis[u] + g[i].w < dis[v]) {
                 dis[v] = dis[u] + g[i].w;

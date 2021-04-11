@@ -14,9 +14,7 @@ int find(int x) {
 
 struct node {
     int x, y, t;
-    bool operator <(const node &a) const {
-        return t < a.t;
-    }
+    bool operator<(const node &a) const { return t < a.t; }
 } v[100005];
 
 int main() {

@@ -12,7 +12,7 @@ int main() {
     cin >> n;
 
     double num = 1;
-    for(int i = 2; i <= n; i++)
+    for (int i = 2; i <= n; i++)
         num += log10((double)i);
     cout << (int)num << endl;
     return 0;

@@ -26,15 +26,15 @@ int main() {
     for (int i = 1; i <= n; i++)
         sup[i] = i;
     for (int i = 0; i < m; i++) {
-        int z,x,y;
+        int z, x, y;
         cin >> z >> x >> y;
         if (z == 2) {
             if (find(x) == find(y))
                 cout << 'Y' << endl;
             else
                 cout << 'N' << endl;
-        }
-        else join(x, y);
+        } else
+            join(x, y);
     }
 
     return 0;

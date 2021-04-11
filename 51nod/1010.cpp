@@ -12,7 +12,7 @@ int asize = 0;
 
 void init() {
     for (ull i = 1; i < 1e18 + 999; i *= 2)
-        for(ull j = 1; j * i < 1e18 + 999; j *= 3)
+        for (ull j = 1; j * i < 1e18 + 999; j *= 3)
             for (ull k = 1; k * j * i < 1e18 + 999; k *= 5)
                 num[asize++] = i * j * k;
     sort(num, num + asize);

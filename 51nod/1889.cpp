@@ -23,7 +23,6 @@ int fn() {
             l = mid;
         else
             r = mid;
-
     }
     return l;
 }

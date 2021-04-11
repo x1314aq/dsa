@@ -11,7 +11,7 @@ typedef long long ll;
 ll n;
 
 static inline ll s(ll x) {
-    return x*(x+1)/2;
+    return x * (x + 1) / 2;
 }
 
 int main() {
@@ -23,8 +23,10 @@ int main() {
         while (l < r) {
             ll m = l + (r - l) / 2;
             ll sm = s(m) - s0;
-            if (sm >= n) r = m;
-            else l = m + 1;
+            if (sm >= n)
+                r = m;
+            else
+                l = m + 1;
         }
         if (s(l) - s0 == n) {
             cout << i << ' ' << l << endl;

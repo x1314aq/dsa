@@ -10,13 +10,13 @@ int main() {
     int n;
     cin >> n;
     int start = 0;
-    while(n--) {
+    while (n--) {
         int tmp;
         cin >> tmp;
         start ^= tmp;
     }
 
-    if(start == 0)
+    if (start == 0)
         cout << 'B' << endl;
     else
         cout << 'A' << endl;

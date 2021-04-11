@@ -38,8 +38,7 @@ int main() {
                 cout << "Yes" << endl;
             else
                 cout << "No" << endl;
-        }
-        else {
+        } else {
             int a;
             cin >> a;
             cout << find(a) << endl;

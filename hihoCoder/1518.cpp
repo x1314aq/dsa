@@ -2,7 +2,6 @@
  * hihoCoder 1518  最大集合
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,27 +18,27 @@ void calc(int k) {
     int ans = 0;
     int pre = arr[k];
     num[ans] = pre;
-    while(!visit[pre]) {
+    while (!visit[pre]) {
         visit[pre] = 1;
         ans++;
         pre = arr[pre];
         num[ans] = pre;
     }
-    
-    for(int i = 0; i < ans; i++)
+
+    for (int i = 0; i < ans; i++)
         res[num[i]] = ans;
 }
 
 int main() {
     scanf("%d", &n);
-    for(int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++)
         scanf("%d", &arr[i]);
 
     int ans = 1;
-    for(int i = 1;i <= n; i++) {
-        if(!res[i])
+    for (int i = 1; i <= n; i++) {
+        if (!res[i])
             calc(i);
-        if(res[i] > ans)
+        if (res[i] > ans)
             ans = res[i];
     }
     printf("%d\n", ans);

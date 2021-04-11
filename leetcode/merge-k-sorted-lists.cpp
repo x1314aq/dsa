@@ -3,10 +3,10 @@
  * priority queue
  */
 
-#include <iostream>
-#include <vector>
-#include <queue>
 #include <algorithm>
+#include <iostream>
+#include <queue>
+#include <vector>
 
 using namespace std;
 
@@ -20,30 +20,31 @@ struct ListNode {
 };
 
 struct cmp {
-    bool operator() (ListNode *a, ListNode *b) {
-        return a->val > b->val;
-    }
+    bool operator()(ListNode *a, ListNode *b) { return a->val > b->val; }
 };
 
 class Solution {
-public:
+  public:
     priority_queue<ListNode *, vector<ListNode *>, cmp> pq;
 
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
+    ListNode *mergeKLists(vector<ListNode *> &lists) {
         size_t num = lists.size();
-        if(num == 0) return NULL;
+        if (num == 0)
+            return NULL;
         ListNode head(0);
 
-        for(size_t i = 0; i < num; i++) {
-            if(lists[i]) pq.push(lists[i]);
+        for (size_t i = 0; i < num; i++) {
+            if (lists[i])
+                pq.push(lists[i]);
         }
 
         ListNode *cur = &head;
-        while(!pq.empty()) {
+        while (!pq.empty()) {
             ListNode *temp = pq.top();
             pq.pop();
             cur->next = temp;
-            if(temp->next) pq.push(temp->next);
+            if (temp->next)
+                pq.push(temp->next);
             cur = temp;
         }
         cur->next = NULL;
@@ -69,9 +70,7 @@ int main() {
     ListNode z(6);
     h3.next = &z;
 
-    vector<ListNode *> v = {
-        &h1, &h2, &h3
-    };
+    vector<ListNode *> v = {&h1, &h2, &h3};
     Solution solu;
     solu.mergeKLists(v);
     return 0;

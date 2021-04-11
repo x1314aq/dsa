@@ -7,7 +7,7 @@
 using namespace std;
 
 int fn(int x) {
-    switch(x % 4) {
+    switch (x % 4) {
     case 0:
         return x;
     case 1:

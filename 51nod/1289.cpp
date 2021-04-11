@@ -12,27 +12,25 @@ int main() {
     int index = 0, left = 0;
     int N;
     scanf("%d", &N);
-    for(int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         int size, dir;
         scanf("%d %d", &size, &dir);
-        if(dir == 0) {
-            if(index == 0) {
+        if (dir == 0) {
+            if (index == 0) {
                 left++;
-            }
-            else {
-                while(index) {
+            } else {
+                while (index) {
                     int size0 = arr[index - 1];
-                    if(size > size0)
+                    if (size > size0)
                         index--;
                     else
                         break;
                 }
 
-                if(index == 0)
+                if (index == 0)
                     left++;
             }
-        }
-        else
+        } else
             arr[index++] = size;
     }
 

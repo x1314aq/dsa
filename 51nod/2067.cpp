@@ -31,8 +31,8 @@ void dfs(int k) {
 }
 
 int main() {
-	cin >> n;
-	dfs(1);
-	cout<< ans << endl;
-	return 0;
+    cin >> n;
+    dfs(1);
+    cout << ans << endl;
+    return 0;
 }

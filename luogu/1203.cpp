@@ -18,16 +18,22 @@ void fn(int a) {
     string s2 = s1;
     reverse(s2.begin(), s2.end());
 
-    while (s1[i] == 'w') tmp++, i++;
+    while (s1[i] == 'w')
+        tmp++, i++;
     for (int j = i; j < n; j++) {
-        if (s1[i] == s1[j] || s1[j] == 'w') tmp++;
-        else break;
+        if (s1[i] == s1[j] || s1[j] == 'w')
+            tmp++;
+        else
+            break;
     }
     i = 0;
-    while (s2[i] == 'w') tmp++, i++;
+    while (s2[i] == 'w')
+        tmp++, i++;
     for (int j = i; j < n; j++) {
-        if (s2[i] == s2[j] || s2[j] == 'w') tmp++;
-        else break;
+        if (s2[i] == s2[j] || s2[j] == 'w')
+            tmp++;
+        else
+            break;
     }
     ans = max(ans, tmp);
 }

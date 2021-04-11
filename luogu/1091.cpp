@@ -28,6 +28,6 @@ int main() {
     int ans = 0;
     for (int i = 1; i <= n; i++)
         ans = max(ans, dp[0][i] + dp[1][i] - 1);
-    cout << n - ans<< endl;
+    cout << n - ans << endl;
     return 0;
 }

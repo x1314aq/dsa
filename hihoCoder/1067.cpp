@@ -3,7 +3,6 @@
  * 离线算法+并查集
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,16 +24,16 @@ void dfs(int u, int f) {
     int qsz = query[u].size();
 
     sup[u] = u;
-    for(int i = 0; i < sz; i++)
+    for (int i = 0; i < sz; i++)
         dfs(g[u][i], u);
-    for(int i = 0; i < qsz; i++) {
+    for (int i = 0; i < qsz; i++) {
         int tmp = query[u][i];
         int target;
-        if(u == dict[qleft[tmp]])
+        if (u == dict[qleft[tmp]])
             target = dict[qright[tmp]];
         else
             target = dict[qleft[tmp]];
-        if(!find(target))
+        if (!find(target))
             continue;
         ans[tmp] = find(target);
     }
@@ -45,14 +44,14 @@ int main() {
     int n, m;
 
     cin >> n;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         string f, s;
         cin >> f >> s;
-        if(!dict[f]) {
+        if (!dict[f]) {
             name[cnt] = f;
             dict[f] = cnt++;
         }
-        if(!dict[s]) {
+        if (!dict[s]) {
             name[cnt] = s;
             dict[s] = cnt++;
         }
@@ -62,7 +61,7 @@ int main() {
     }
 
     cin >> m;
-    for(int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i++) {
         cin >> qleft[i] >> qright[i];
         int p1 = dict[qleft[i]];
         int p2 = dict[qright[i]];
@@ -72,7 +71,7 @@ int main() {
 
     dfs(1, 1);
 
-    for(int i = 0; i < m; i++)
+    for (int i = 0; i < m; i++)
         cout << name[ans[i]] << endl;
     return 0;
 }

@@ -18,27 +18,25 @@ bool cmp(const pll &a, const pll &b) {
 int main() {
     int N, K;
     scanf("%d %d", &K, &N);
-    for(int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         ll tmp;
         scanf("%lld", &tmp);
-        if(dict.find(K - tmp) != dict.end()) {
+        if (dict.find(K - tmp) != dict.end()) {
             ll a = min(tmp, K - tmp);
             ll b = max(tmp, K - tmp);
             vec.push_back(make_pair(a, b));
             dict.erase(K - tmp);
-        }
-        else {
+        } else {
             dict[tmp] = 1;
         }
     }
 
-    if(vec.size()) {
+    if (vec.size()) {
         sort(vec.begin(), vec.end(), cmp);
-        for(auto p : vec) {
+        for (auto p : vec) {
             printf("%lld %lld\n", p.first, p.second);
         }
-    }
-    else
+    } else
         printf("No Solution\n");
     return 0;
 }

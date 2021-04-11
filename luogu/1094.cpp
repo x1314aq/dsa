@@ -23,8 +23,7 @@ int main() {
         if (a[i] + a[j] > w) {
             ans++;
             i--;
-        }
-        else {
+        } else {
             ans++;
             i--;
             j++;

@@ -31,9 +31,12 @@ int main() {
 
     int i;
     for (i = 0; i < n - k; i++) {
-        if (ans[i] != '0') break;
+        if (ans[i] != '0')
+            break;
     }
-    if (i == n - k) cout << '0' << endl;
-    else cout << ans.substr(i) << endl;
+    if (i == n - k)
+        cout << '0' << endl;
+    else
+        cout << ans.substr(i) << endl;
     return 0;
 }

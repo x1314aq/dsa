@@ -22,7 +22,8 @@ int main() {
     while (1) {
         int a = pq.top();
         pq.pop();
-        if (pq.empty()) break;
+        if (pq.empty())
+            break;
         int b = pq.top();
         pq.pop();
         ans += (a + b);

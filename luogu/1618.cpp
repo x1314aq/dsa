@@ -49,8 +49,7 @@ int main() {
     solve();
     if (ans.empty()) {
         cout << "No!!!" << endl;
-    }
-    else {
+    } else {
         for (size_t i = 0; i < ans.size(); i++) {
             for (int j = 0; j < 3; j++) {
                 int n = 100 * ans[i][j * 3] + 10 * ans[i][j * 3 + 1] + ans[i][j * 3 + 2];

@@ -3,7 +3,6 @@
  * Prim + priority_queue
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,7 +14,7 @@ int vis[100005];
 int main() {
     int n, m;
     cin >> n >> m;
-    for(int i = 1; i <= m; i++) {
+    for (int i = 1; i <= m; i++) {
         int u, v, cost;
         scanf("%d %d %d", &u, &v, &cost);
         vs[u].push_back(pii(cost, v));
@@ -24,17 +23,17 @@ int main() {
 
     priority_queue<pii, vector<pii>, greater<pii>> pq;
     vis[1] = 1;
-    for(size_t i = 0; i < vs[1].size(); i++)
+    for (size_t i = 0; i < vs[1].size(); i++)
         pq.push(pii(vs[1][i]));
     int ans = 0;
-    while(!pq.empty()) {
+    while (!pq.empty()) {
         pii cur = pq.top();
         pq.pop();
-        if(!vis[cur.second]) {
+        if (!vis[cur.second]) {
             vis[cur.second] = 1;
             ans += cur.first;
-            for(size_t i = 0; i < vs[cur.second].size(); i++) {
-                if(!vis[vs[cur.second][i].second])
+            for (size_t i = 0; i < vs[cur.second].size(); i++) {
+                if (!vis[vs[cur.second][i].second])
                     pq.push(pii(vs[cur.second][i]));
             }
         }

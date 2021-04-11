@@ -13,11 +13,8 @@ int visited[1005];
 int dist[1005];
 
 struct cmp {
-    bool operator()(const pii &a, const pii &b) {
-        return a.second > b.second;
-    }
+    bool operator()(const pii &a, const pii &b) { return a.second > b.second; }
 };
-
 
 int dijkstra(int dest) {
     priority_queue<pii, vector<pii>, cmp> pq;

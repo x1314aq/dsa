@@ -8,9 +8,11 @@ int n, k;
 static int qsort(int l, int r) {
     int m = a[l];
     while (l < r) {
-        while (l < r && m <= a[r]) r--;
+        while (l < r && m <= a[r])
+            r--;
         a[l] = a[r];
-        while (l < r && m >= a[l]) l++;
+        while (l < r && m >= a[l])
+            l++;
         a[r] = a[l];
     }
     a[l] = m;
@@ -22,10 +24,10 @@ static void solve(int l, int r) {
     if (x == k) {
         cout << a[x] << endl;
         exit(0);
-    }
-    else if (k - 1 < x)
+    } else if (k - 1 < x)
         solve(l, x - 1);
-    else solve(x + 1, r);
+    else
+        solve(x + 1, r);
 }
 
 int main() {

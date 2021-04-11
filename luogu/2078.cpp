@@ -18,7 +18,7 @@ int find_b(int x) {
 }
 
 int main() {
-    int n,m,p,q;
+    int n, m, p, q;
     ios::sync_with_stdio(false);
     cin >> n >> m >> p >> q;
     for (int i = 1; i <= n; i++) {
@@ -30,7 +30,7 @@ int main() {
         bb[i] = 1;
     }
     for (int i = 1; i <= p; i++) {
-        int x,y;
+        int x, y;
         cin >> x >> y;
         if (x != y) {
             int fx = find_a(x);
@@ -39,8 +39,7 @@ int main() {
                 if (fx == 1) {
                     a[fy] = fx;
                     aa[fx] += aa[fy];
-                }
-                else {
+                } else {
                     a[fx] = fy;
                     aa[fy] += aa[fx];
                 }
@@ -48,7 +47,7 @@ int main() {
         }
     }
     for (int i = 1; i <= q; i++) {
-        int x,y;
+        int x, y;
         cin >> x >> y;
         x *= -1;
         y *= -1;
@@ -59,8 +58,7 @@ int main() {
                 if (fx == 1) {
                     b[fy] = fx;
                     bb[fx] += bb[fy];
-                }
-                else {
+                } else {
                     b[fx] = fy;
                     bb[fy] += bb[fx];
                 }

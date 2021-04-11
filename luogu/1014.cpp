@@ -15,11 +15,15 @@ int main() {
     r = n;
     while (l < r) {
         m = l + (r - l) / 2;
-        if ((m * (m + 1) / 2) >= n) r = m;
-        else l = m + 1;
+        if ((m * (m + 1) / 2) >= n)
+            r = m;
+        else
+            l = m + 1;
     }
     int a = n - l * (l - 1) / 2;
-    if (l % 2 == 0) cout << a << '/' << l + 1 - a << endl;
-    else cout << l + 1 - a << '/' << a;
+    if (l % 2 == 0)
+        cout << a << '/' << l + 1 - a << endl;
+    else
+        cout << l + 1 - a << '/' << a;
     return 0;
 }

@@ -7,8 +7,8 @@
 using namespace std;
 
 struct edge {
-    edge():to(0),len(0) {}
-    edge(int a, int b):to(a),len(b) {}
+    edge() : to(0), len(0) {}
+    edge(int a, int b) : to(a), len(b) {}
     int to, len;
 };
 

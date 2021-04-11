@@ -10,9 +10,7 @@ struct node {
     int a, b;
     node() = default;
     node(int a0, int b0) : a(a0), b(b0) {}
-    bool operator <(const node &tmp) const {
-        return a < tmp.a;
-    }
+    bool operator<(const node &tmp) const { return a < tmp.a; }
 };
 node stations[10005];
 

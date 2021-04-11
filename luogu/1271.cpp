@@ -14,7 +14,8 @@ int main() {
         a[b]++;
     }
     for (int i = 1; i <= n; i++)
-        while (a[i]--) cout << i << ' ';
+        while (a[i]--)
+            cout << i << ' ';
     cout.flush();
 
     return 0;

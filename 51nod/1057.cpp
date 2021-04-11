@@ -17,18 +17,18 @@ int main() {
     ind = 1;
 
     ull carry;
-    for(int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         carry = 0;
-        for(int j = 0; j < ind; j++) {
+        for (int j = 0; j < ind; j++) {
             ull s = ans[j] * i + carry;
             carry = s / mod;
             ans[j] = s % mod;
         }
-        if(carry)
+        if (carry)
             ans[ind++] = carry;
     }
     printf("%llu", ans[ind - 1]);
-    for(int i = ind - 2; i >= 0; i--)
+    for (int i = ind - 2; i >= 0; i--)
         printf("%014llu", ans[i]);
     printf("\n");
 

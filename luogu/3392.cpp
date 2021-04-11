@@ -27,14 +27,12 @@ void dfs(int k, int sum) {
         }
         g[k][0] = 'B';
         dfs(k + 1, sum + calc(k));
-    }
-    else if (g[k - 1][0] == 'B') {
+    } else if (g[k - 1][0] == 'B') {
         g[k][0] = 'B';
         dfs(k + 1, sum + calc(k));
         g[k][0] = 'R';
         dfs(k + 1, sum + calc(k));
-    }
-    else {
+    } else {
         g[k][0] = 'R';
         dfs(k + 1, sum + calc(k));
     }

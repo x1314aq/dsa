@@ -2,7 +2,6 @@
  * hihoCoder 1138 Islands Travel
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,7 +39,7 @@ int main() {
     int n;
 
     cin >> n;
-    for(int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         cin >> islands[i].x >> islands[i].y;
         islands[i].id = i;
         dist[i] = INF;
@@ -50,7 +49,7 @@ int main() {
     sort(islands + 1, islands + n + 1, cmp1);
     islands[1].neigh[0] = 0;
     int i = 1, j;
-    while(i <= n) {
+    while (i <= n) {
         j = i + 1;
         islands[j].neigh[0] = islands[i].id;
         islands[i].neigh[1] = j <= n ? islands[j].id : 0;
@@ -60,7 +59,7 @@ int main() {
     sort(islands + 1, islands + n + 1, cmp2);
     islands[1].neigh[2] = 0;
     i = 1;
-    while(i < n) {
+    while (i < n) {
         j = i + 1;
         islands[j].neigh[2] = islands[i].id;
         islands[i].neigh[3] = j <= n ? islands[j].id : 0;
@@ -70,29 +69,29 @@ int main() {
     sort(islands + 1, islands + n + 1, cmp0);
     queue<int> q;
     int max_dist = calc(1, n);
-    for(int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         int temp = calc(1, i);
-        if(temp < max_dist) {
+        if (temp < max_dist) {
             dist[i] = temp;
             q.push(i);
             visit[i] = true;
         }
     }
 
-    while(!q.empty()) {
+    while (!q.empty()) {
         int v = q.front();
         visit[v] = false;
         q.pop();
-        for(int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             int u = islands[v].neigh[i];
             int temp = calc(v, u) + dist[v];
-            if(temp < max_dist) {
-                if(temp < dist[u]) {
+            if (temp < max_dist) {
+                if (temp < dist[u]) {
                     dist[u] = temp;
-                    if(u == n)
+                    if (u == n)
                         max_dist = temp;
                     else {
-                        if(!visit[u]) {
+                        if (!visit[u]) {
                             q.push(u);
                             visit[u] = true;
                         }
@@ -105,4 +104,3 @@ int main() {
     cout << dist[n] << endl;
     return 0;
 }
-

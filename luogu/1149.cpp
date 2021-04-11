@@ -7,7 +7,8 @@ const int a[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
 
 int calc(int n) {
     int sum = 0;
-    if (n == 0) return a[0];
+    if (n == 0)
+        return a[0];
     while (n) {
         sum += a[n % 10];
         n /= 10;

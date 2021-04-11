@@ -57,8 +57,10 @@ int main() {
     int l = 0, r = 10000;
     while (l < r) {
         int mid = (l + r) / 2;
-        if (spfa(mid)) r = mid;
-        else l = mid + 1;
+        if (spfa(mid))
+            r = mid;
+        else
+            l = mid + 1;
     }
     cout << l << endl;
     return 0;

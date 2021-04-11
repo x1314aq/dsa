@@ -2,7 +2,6 @@
  * hihoCoder 1399  shortening Sequence
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,17 +10,17 @@ int main() {
 
     vector<int> v;
     scanf("%d", &n);
-    for(int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         int tmp;
         scanf("%d", &tmp);
 
-        if(!v.size()) {
+        if (!v.size()) {
             v.push_back(tmp);
             continue;
         }
 
         int a = v.back();
-        if((a + tmp) & 1)
+        if ((a + tmp) & 1)
             v.pop_back();
         else
             v.push_back(tmp);

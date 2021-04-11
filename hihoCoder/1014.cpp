@@ -2,7 +2,6 @@
  * hihoCoder 1014 Trie树
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,16 +25,16 @@ static void tinsert(char *word) {
     char *c = word;
     struct trie_node *p;
     struct trie_node *n = root.nodes[*c - 'a'];
-    if(!n) {
+    if (!n) {
         n = alloc_one();
         n->letter = *c;
         root.nodes[*c - 'a'] = n;
     }
     n->count++;
-    while(*++c) {
+    while (*++c) {
         p = n;
         n = n->childs[*c - 'a'];
-        if(!n) {
+        if (!n) {
             n = alloc_one();
             n->letter = *c;
             p->childs[*c - 'a'] = n;
@@ -48,10 +47,12 @@ static void tinsert(char *word) {
 static int tsearch(char *word) {
     char *c = word;
     struct trie_node *n = root.nodes[*c - 'a'];
-    if(!n) return 0;
-    while(*++c) {
+    if (!n)
+        return 0;
+    while (*++c) {
         n = n->childs[*c - 'a'];
-        if(!n) return 0;
+        if (!n)
+            return 0;
     }
     return n->count;
 }
@@ -61,16 +62,16 @@ int main() {
     int n;
     scanf("%d", &n);
     char word[16];
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%s", word);
         tinsert(word);
     }
     scanf("%d", &n);
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%s", word);
         res[i] = tsearch(word);
     }
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         printf("%d\n", res[i]);
     return 0;
 }

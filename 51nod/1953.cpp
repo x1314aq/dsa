@@ -53,8 +53,7 @@ int main() {
                 vs[i].push_back(j);
                 vs[j].push_back(i);
                 matrix[i][j] = matrix[j][i] = stoi(s);
-            }
-            else {
+            } else {
                 matrix[i][j] = matrix[j][i] = 100000;
             }
         }

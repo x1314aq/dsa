@@ -3,7 +3,6 @@
  * DFS
  */
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -24,35 +23,35 @@ static void init() {
     taboo[3][9] = 6;
     taboo[1][9] = 5;
     taboo[3][7] = 5;
-    for(int i = 1; i <= 9; i++)
-        for(int j = i + 1; j <= 9; j++)
+    for (int i = 1; i <= 9; i++)
+        for (int j = i + 1; j <= 9; j++)
             taboo[j][i] = taboo[i][j];
 }
 
 static int allow(int cnt) {
     int sz = part.size();
-    for(int n = 0; n < sz; n++) {
+    for (int n = 0; n < sz; n++) {
         int fail = 1;
         pii tmp = part[n];
-        for(int i = 1; i < cnt - 1; i++) {
-            if ((num[i] == tmp.first && num[i + 1] == tmp.second)
-                || (num[i] == tmp.second && num[i + 1] == tmp.first)) {
+        for (int i = 1; i < cnt - 1; i++) {
+            if ((num[i] == tmp.first && num[i + 1] == tmp.second) ||
+                (num[i] == tmp.second && num[i + 1] == tmp.first)) {
                 fail = 0;
                 break;
             }
         }
-        if(fail)
+        if (fail)
             return 0;
     }
     return 1;
 }
 
 static void dfs(int cnt) {
-    if(cnt > 4 && allow(cnt))
+    if (cnt > 4 && allow(cnt))
         ans++;
-    for(int i = 1; i <= 9; i++) {
-        if(!visit[i]) {
-            if(taboo[i][num[cnt - 1]] && !visit[taboo[i][num[cnt - 1]]])
+    for (int i = 1; i <= 9; i++) {
+        if (!visit[i]) {
+            if (taboo[i][num[cnt - 1]] && !visit[taboo[i][num[cnt - 1]]])
                 continue;
             num[cnt] = i;
             visit[i] = 1;
@@ -69,10 +68,10 @@ int main() {
     init();
 
     vector<int> res;
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         int m;
         cin >> m;
-        if(m == 0) {
+        if (m == 0) {
             res.push_back(389112);
             continue;
         }
@@ -81,7 +80,7 @@ int main() {
         memset(num, 0, sizeof(num));
         part.clear();
         ans = 0;
-        for(int j = 0; j < m; j++) {
+        for (int j = 0; j < m; j++) {
             int a, b;
             cin >> a >> b;
             part.push_back(make_pair(a, b));
@@ -90,11 +89,10 @@ int main() {
         res.push_back(ans);
     }
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         cout << res[i] << endl;
     return 0;
 }
-
 
 /**
  * 数位DP解法

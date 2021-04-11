@@ -7,7 +7,7 @@
 using namespace std;
 typedef unsigned long long ull;
 
-int n,m,x,y;
+int n, m, x, y;
 ull a[25][25];
 
 static inline bool die(int i, int j) {
@@ -23,7 +23,8 @@ static inline bool die(int i, int j) {
 int main() {
     ios::sync_with_stdio(false);
     cin >> n >> m >> x >> y;
-    if (!die(0, 0)) a[0][0] = 1;
+    if (!die(0, 0))
+        a[0][0] = 1;
     for (int i = 1; i <= n; i++) {
         if (!die(i, 0))
             a[i][0] = a[i - 1][0];
@@ -33,7 +34,7 @@ int main() {
             a[0][i] = a[0][i - 1];
     }
     for (int i = 1; i <= n; i++) {
-        for (int j = 1;j <= m; j++) {
+        for (int j = 1; j <= m; j++) {
             a[i][j] = a[i - 1][j] + a[i][j - 1];
             if (die(i, j))
                 a[i][j] = 0;

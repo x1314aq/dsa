@@ -8,9 +8,7 @@ using namespace std;
 
 struct edge {
     int x, y, w;
-    bool operator <(const edge &b) const {
-        return w < b.w;
-    }
+    bool operator<(const edge &b) const { return w < b.w; }
 } g[10005];
 
 int sup[105];
@@ -37,8 +35,8 @@ int main() {
         if (fx != fy) {
             sup[fx] = fy;
             cnt++;
-        }
-        else ans += g[i].w;
+        } else
+            ans += g[i].w;
         if (cnt == n - 1) {
             for (int j = i + 1; j < k; j++)
                 ans += g[j].w;

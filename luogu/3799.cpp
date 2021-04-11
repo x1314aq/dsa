@@ -23,8 +23,10 @@ int main() {
     }
     for (int i = 1; i <= maxn; ++i) {
         for (int j = 0; j * 2 <= i; ++j) {
-            if (i == 2 * j) ch = a[j] * (a[j] - 1) / 2;
-            else ch = a[j] * a[i - j];
+            if (i == 2 * j)
+                ch = a[j] * (a[j] - 1) / 2;
+            else
+                ch = a[j] * a[i - j];
             ans = (ans + ch * a[i] * (a[i] - 1) / 2) % mod;
         }
     }
