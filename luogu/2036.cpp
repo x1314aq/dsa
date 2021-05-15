@@ -7,7 +7,7 @@ int maxn;
 int s[15];
 int b[15];
 bool vis[15];
-ll ans = LONG_LONG_MAX;
+ll ans = LLONG_MAX;
 
 void dfs(int k, int startx, ll ss, ll sb, int n) {
     if (k == n) {
