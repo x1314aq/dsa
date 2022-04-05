@@ -11,13 +11,16 @@ struct node {
 };
 
 static node g_n[10005];
-static int g_a[10005];
+
+struct cmp {
+    bool operator() (int a, int b) {
+        return g_n[a].time < g_n[b].time;
+    }
+};
 
 int main() {
-    int n;
-    int ans = 0;
-    queue<int> q;
-
+    int n, ans;
+    multiset<int, cmp> s;
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cin >> n;
@@ -34,24 +37,21 @@ int main() {
 
     for (int i = 1; i <= n; i++) {
         if (g_n[i].in == 0) {
-            q.push(i);
-            g_a[i] = g_n[i].time;
+            s.insert(i);
         }
     }
-    while (!q.empty()) {
-        int u = q.front();
-        q.pop();
 
+    while (!s.empty()) {
+        int u = *s.cbegin();
+        ans = g_n[u].time;
+        s.erase(s.begin());
         for (auto it = g_n[u].v.cbegin(); it != g_n[u].v.cend(); ++it) {
             g_n[*it].in--;
             if (g_n[*it].in == 0) {
-                q.push(*it);
+                g_n[*it].time += g_n[u].time;
+                s.insert(*it);
             }
-            g_a[*it] = max(g_a[*it], g_a[u] + g_n[*it].time);
         }
-    }
-    for (int i = 1; i <= n; i++) {
-        ans = max(ans, g_a[i]);
     }
     cout << ans << endl;
     return 0;
