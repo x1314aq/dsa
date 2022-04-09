@@ -39,8 +39,22 @@ macro(compile DIR)
     add_custom_target(${DIR} DEPENDS ${DEPS})
 endmacro()
 
-# compile(hihoCoder)
-# compile(leetcode)
-# compile(51nod)
-compile(luogu)
-# compile(cf)
+if(hihocoder)
+    compile(hihoCoder)
+endif()
+
+if(leetcode)
+    compile(leetcode)
+endif()
+
+if(51nod)
+    compile(51nod)
+endif()
+
+if(luogu)
+    compile(luogu)
+endif()
+
+if(cf)
+    compile(cf)
+endif()
