@@ -24,8 +24,8 @@ int main() {
     }
 
     for (int i = 2; i <= n; i++) {
-        g_dis[i]=-1e9;
-        if(!g_in[i]) {
+        g_dis[i] = -1e9;
+        if (!g_in[i]) {
             q.push(i);
         }
     }

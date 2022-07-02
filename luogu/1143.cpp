@@ -47,7 +47,7 @@ int main() {
 
     cin >> n >> s >> m;
     reverse(s.begin(), s.end());
-    for (int i = 0 ; i < s.length(); i++) {
+    for (int i = 0; i < s.length(); i++) {
         num += map[s[i]] * base;
         base *= n;
     }

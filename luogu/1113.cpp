@@ -13,9 +13,7 @@ struct node {
 static node g_n[10005];
 
 struct cmp {
-    bool operator() (int a, int b) {
-        return g_n[a].time < g_n[b].time;
-    }
+    bool operator()(int a, int b) { return g_n[a].time < g_n[b].time; }
 };
 
 int main() {

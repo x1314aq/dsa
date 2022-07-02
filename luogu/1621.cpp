@@ -46,7 +46,8 @@ int main() {
     for (int i = p; i <= b; i++) {
         if (g_prime[i]) {
             int j = 0;
-            while (i * j < a) j++;
+            while (i * j < a)
+                j++;
             int u = i * j;
             for (; i * j <= b; j++) {
                 join(u, i * j);

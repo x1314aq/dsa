@@ -5,7 +5,8 @@ using ll = long long;
 using pii = pair<int, int>;
 
 static int fn(int x) {
-    if (x == 1) return 1;
+    if (x == 1)
+        return 1;
     int n = 0;
     for (int i = 2; i * i <= x; i++) {
         if (x % i == 0) {

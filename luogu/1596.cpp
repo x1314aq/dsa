@@ -18,10 +18,12 @@ void fn(int i, int j) {
         q.pop();
         for (int u = 0; u < 3; u++) {
             int xx = p.first + x[u];
-            if (xx < 0 || xx >= n) continue;
+            if (xx < 0 || xx >= n)
+                continue;
             for (int v = 0; v < 3; v++) {
                 int yy = p.second + y[v];
-                if (yy < 0 || yy >= m) continue;
+                if (yy < 0 || yy >= m)
+                    continue;
                 if (g[xx][yy] == 'W') {
                     g[xx][yy] = '.';
                     q.push(make_pair(xx, yy));

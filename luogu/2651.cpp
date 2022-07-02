@@ -34,4 +34,3 @@ int main() {
     cout.flush();
     return 0;
 }
-
