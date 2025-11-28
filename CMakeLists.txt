@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 4.0)
 project(dsa C CXX)
 
 set(CMAKE_BUILD_TYPE Debug)
@@ -7,15 +7,10 @@ if (NOT WIN32)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
 endif()
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 17)
 set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Check platform
-if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-    cmake_policy(SET  CMP0042 NEW)
-endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
