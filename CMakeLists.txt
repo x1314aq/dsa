@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.12)
 project(dsa C CXX)
 
 set(CMAKE_BUILD_TYPE Debug)
@@ -18,38 +18,35 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -include ${CMAKE_CURRENT_SOURCE_DIR}/include/bits/stdc++.h")
 endif()
 
-# define a macro for later use
-macro(compile DIR)
-    set(DEPS)
-    set(CUR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/${DIR})
-    file(GLOB SRCS RELATIVE ${CUR_DIR} ${CUR_DIR}/*.c ${CUR_DIR}/*.cpp)
-    foreach(TMP ${SRCS})
-        string(FIND ${TMP} "." POS)
-        string(SUBSTRING ${TMP} 0 ${POS} NAME)
-        set(TARGET "${DIR}-${NAME}")
-        add_executable(${TARGET} ${CUR_DIR}/${TMP})
-        set_target_properties(${TARGET} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${DIR})
-        list(APPEND DEPS ${TARGET})
+# For each enabled directory, glob all .c/.cpp files with CONFIGURE_DEPENDS
+# so that newly added files are picked up on next cmake re-run.
+
+function(compile_dir DIR_NAME)
+    file(GLOB SRCS CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${DIR_NAME}/*.c ${CMAKE_CURRENT_SOURCE_DIR}/${DIR_NAME}/*.cpp)
+    foreach(SRC ${SRCS})
+        get_filename_component(NAME ${SRC} NAME_WE)
+        set(TARGET "${DIR_NAME}-${NAME}")
+        add_executable(${TARGET} ${SRC})
+        set_target_properties(${TARGET} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${DIR_NAME})
     endforeach()
-    add_custom_target(${DIR} DEPENDS ${DEPS})
-endmacro()
+endfunction()
 
 if(hihocoder)
-    compile(hihoCoder)
+    compile_dir(hihoCoder)
 endif()
 
 if(leetcode)
-    compile(leetcode)
+    compile_dir(leetcode)
 endif()
 
-if(51nod)
-    compile(51nod)
+if(use_51nod)
+    compile_dir(51nod)
 endif()
 
 if(luogu)
-    compile(luogu)
+    compile_dir(luogu)
 endif()
 
 if(cf)
-    compile(cf)
+    compile_dir(cf)
 endif()
