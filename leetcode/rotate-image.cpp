@@ -2,23 +2,41 @@ using namespace std;
 
 class Solution {
 public:
+    // void rotate(vector<vector<int>>& matrix) {
+    //     int n = matrix[0].size();
+
+    //     for (int k = 0;; k++) {
+    //         if (2 * k == n || 2 * k == (n - 1)) {
+    //             return;
+    //         }
+    //         for (int i = k; i < n - k - 1; i++) {
+    //             int a = matrix[k][i];
+    //             int b = matrix[i][n - k - 1];
+    //             int c = matrix[n - k - 1][n - i - 1];
+    //             int d = matrix[n - i - 1][k];
+    //             int x = d;
+    //             matrix[n - i - 1][k] = c;
+    //             matrix[n - k - 1][n - i - 1] = b;
+    //             matrix[i][n - k - 1] = a;
+    //             matrix[k][i] = x;
+    //         }
+    //     }
+    // }
+
     void rotate(vector<vector<int>>& matrix) {
         int n = matrix[0].size();
 
-        for (int k = 0;; k++) {
-            if (2 * k == n || 2 * k == (n - 1)) {
-                return;
+        // 水平翻转
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = 0; j < n; j++) {
+                swap(matrix[i][j], matrix[n - i - 1][j]);
             }
-            for (int i = k; i < n - k - 1; i++) {
-                int a = matrix[k][i];
-                int b = matrix[i][n - k - 1];
-                int c = matrix[n - k - 1][n - i - 1];
-                int d = matrix[n - i - 1][k];
-                int x = d;
-                matrix[n - i - 1][k] = c;
-                matrix[n - k - 1][n - i - 1] = b;
-                matrix[i][n - k - 1] = a;
-                matrix[k][i] = x;
+        }
+
+        // 对角线翻转
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                swap(matrix[i][j], matrix[j][i]);
             }
         }
     }
