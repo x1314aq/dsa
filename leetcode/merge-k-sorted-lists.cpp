@@ -19,6 +19,7 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+/*
 struct cmp {
     bool operator()(ListNode *a, ListNode *b) { return a->val > b->val; }
 };
@@ -50,6 +51,49 @@ class Solution {
         cur->next = NULL;
 
         return head.next;
+    }
+};
+*/
+
+class Solution {
+public:
+    ListNode* merge(ListNode* l1, ListNode* l2) {
+        if (!l1) return l2;
+        if (!l2) return l1;
+        ListNode *head = nullptr;
+        if (l1->val < l2->val) {
+            head = l1;
+            l1 = l1->next;
+        } else {
+            head = l2;
+            l2 = l2->next;
+        }
+        ListNode *tmp = head;
+        while (l1 && l2) {
+            if (l1->val < l2->val) {
+                head->next = l1;
+                l1 = l1->next;
+            } else {
+                head->next = l2;
+                l2 = l2->next;
+            }
+            head = head->next;
+        }
+        head->next = !l1 ? l2 : l1;
+        return tmp;
+    }
+
+    ListNode* merge(vector<ListNode*> &lists, int l, int r) {
+        if (l == r - 1) return lists[l];
+        int mid = (l + r) / 2;
+        ListNode *l1 = merge(lists, l, mid);
+        ListNode *l2 = merge(lists, mid, r);
+        return merge(l1, l2);
+    }
+
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        if (lists.empty()) return nullptr;
+        return merge(lists, 0, lists.size());
     }
 };
 
